@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	
+	
+	<context-param>
+		<description>编码方式选择</description>
+		<param-name>encode</param-name>
+		<param-value>utf-8</param-value>
+	</context-param>	
+	
+	<listener>
+		<description>session创建的监听器</description>
+		<listener-class>com.zsy.listener.MySessionListener</listener-class>
+	</listener>
+	
+	<filter>
+		<filter-name>encodefilter</filter-name>
+		<filter-class>com.zsy.filter.EncodeFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>encodefilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+	
+	
+	<filter>
+		<filter-name>autologin</filter-name>
+		<filter-class>com.zsy.filter.AutoLoginFilter</filter-class>
+	</filter>
+	
+	<filter-mapping>
+		<filter-name>autologin</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	
+  <servlet>
+    <servlet-name>Vailimag</servlet-name>
+    <servlet-class>com.zsy.web.Vailimag</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>com.zsy.web.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.zsy.web.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ActiveCodeServlet</servlet-name>
+    <servlet-class>com.zsy.web.ActiveCodeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LogoutServlet</servlet-name>
+    <servlet-class>com.zsy.web.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddProdServlet</servlet-name>
+    <servlet-class>com.zsy.web.AddProdServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ProductListServlet</servlet-name>
+    <servlet-class>com.zsy.web.ProductListServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ImgServlet</servlet-name>
+    <servlet-class>com.zsy.web.ImgServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ProdInfoServlet</servlet-name>
+    <servlet-class>com.zsy.web.ProdInfoServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddCartServlet</servlet-name>
+    <servlet-class>com.zsy.web.AddCartServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>DelProdServlet</servlet-name>
+    <servlet-class>com.zsy.web.DelProdServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ClearCartServlet</servlet-name>
+    <servlet-class>com.zsy.web.ClearCartServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ChangeProdNumServlet</servlet-name>
+    <servlet-class>com.zsy.web.ChangeProdNumServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>Vailimag</servlet-name>
+    <url-pattern>/servlet/Vailimag</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/servlet/RegisterServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/servlet/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ActiveCodeServlet</servlet-name>
+    <url-pattern>/servlet/ActiveCodeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/servlet/LogoutServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddProdServlet</servlet-name>
+    <url-pattern>/servlet/AddProdServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ProductListServlet</servlet-name>
+    <url-pattern>/servlet/ProductListServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ImgServlet</servlet-name>
+    <url-pattern>/servlet/ImgServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ProdInfoServlet</servlet-name>
+    <url-pattern>/servlet/ProdInfoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddCartServlet</servlet-name>
+    <url-pattern>/servlet/AddCartServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>DelProdServlet</servlet-name>
+    <url-pattern>/servlet/DelProdServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ClearCartServlet</servlet-name>
+    <url-pattern>/servlet/ClearCartServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChangeProdNumServlet</servlet-name>
+    <url-pattern>/servlet/ChangeProdNumServlet</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>
